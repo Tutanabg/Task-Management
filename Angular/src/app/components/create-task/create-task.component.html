@@ -1,0 +1,61 @@
+
+<div class="text-center my-4">
+  <a [routerLink]="['/tasks']" class="btn btn-primary btn-lg rounded-pill shadow-sm" role="button"><h2 class="mb-0">Home</h2></a>
+</div>
+<h1 class="styled-heading"> Add New Task</h1>
+
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div class="form-column">
+    <div class="col-md-4 mb-3">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name"        [ngClass]="{ 'is-invalid': taskForm.get('name')?.invalid && (taskForm.get('name')?.touched || taskForm.get('name')?.dirty) }">
+      <div *ngIf="taskForm.get('name')?.invalid && (taskForm.get('name')?.touched || taskForm.get('name')?.dirty)" class="invalid-feedback">
+      <div *ngIf="taskForm.get('name')?.errors?.['required']">Name is required.</div>
+      <div *ngIf="taskForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4 mb-3">
+      <label for="date">Date</label>
+      <input type="text" class="form-control" id="date" formControlName="date"        [ngClass]="{ 'is-invalid': taskForm.get('date')?.invalid && (taskForm.get('date')?.touched || taskForm.get('date')?.dirty) }">
+      <div *ngIf="taskForm.get('date')?.invalid && (taskForm.get('date')?.touched || taskForm.get('date')?.dirty)" class="invalid-feedback">
+      <div *ngIf="taskForm.get('date')?.errors?.['required']">Date is required.</div>
+      </div>
+    </div>
+    
+
+    <div class="col-md-4 mb-3">
+      <label for="performedBy">Performed By</label>
+      <input type="text" class="form-control" id="performedBy" formControlName="performedBy"        [ngClass]="{ 'is-invalid': taskForm.get('performedBy')?.invalid && (taskForm.get('performedBy')?.touched || taskForm.get('performedBy')?.dirty) }">
+      <div *ngIf="taskForm.get('performedBy')?.invalid && (taskForm.get('performedBy')?.touched || taskForm.get('performedBy')?.dirty)" class="invalid-feedback">
+      <div *ngIf="taskForm.get('performedBy')?.errors?.['required']">Performed By is required.</div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4 mb-3">
+      <label for="durationInDays">Duration In Days</label>
+      <input type="number" class="form-control" id="durationInDays" formControlName="durationInDays"        [ngClass]="{ 'is-invalid': taskForm.get('durationInDays')?.invalid && (taskForm.get('durationInDays')?.touched || taskForm.get('durationInDays')?.dirty) }">
+      <div *ngIf="taskForm.get('durationInDays')?.invalid && (taskForm.get('durationInDays')?.touched || taskForm.get('durationInDays')?.dirty)" class="invalid-feedback">
+      <div *ngIf="taskForm.get('durationInDays')?.errors?.['required']">Performed By is required.</div>
+      <div *ngIf="taskForm.get('durationInDays')?.errors?.['minlength']">Duration must be at least 1 day.</div>
+      </div>
+      </div>
+    
+
+
+    <div class="col-md-4 mb-3">
+      <label for="cost">Cost</label>
+      <input type="number" class="form-control" id="cost" formControlName="cost"        [ngClass]="{ 'is-invalid': taskForm.get('cost')?.invalid && (taskForm.get('cost')?.touched || taskForm.get('cost')?.dirty) }">
+      <div *ngIf="taskForm.get('cost')?.invalid && (taskForm.get('cost')?.touched || taskForm.get('cost')?.dirty)" class="invalid-feedback">
+      <div *ngIf="taskForm.get('cost')?.errors?.['required']">Cost is required.</div>
+      </div>
+    </div>
+
+
+    
+    <button class="btn btn-primary" type="submit" [disabled]="taskForm.invalid">Submit form</button>
+  </div>
+</form>
+

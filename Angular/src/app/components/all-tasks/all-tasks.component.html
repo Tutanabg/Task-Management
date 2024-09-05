@@ -1,0 +1,39 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" [href]="'tasks'">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" [href]="'tasks/create'">Create Task</a>
+  </li>
+</ul>
+
+<h4 class="styled-heading">List of All Tasks</h4>
+
+<table class="table table-bordered">
+  <thead>
+    <tr class="table-primary">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Performed By</th>
+      <th>Duration(Days)</th>
+      <th>Cost</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.id }}</td>
+      <td>{{ task.name }}</td>
+      <td>{{ task.date }}</td>
+      <td>{{ task.performedBy }}</td>
+      <td>{{ task.durationInDays }}</td>
+      <td>{{ task.cost }}</td>
+      <td><a [href]="'tasks/update/' + task.id">
+        <button type="button" class="btn btn-success">Update</button>
+    </a>
+        <button type="button" class="btn btn-danger" (click)="deleteTask(task.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+
+body {
+  background-color: rgb(216, 224, 215);
+}
+
+
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.875em;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.styled-heading {
+  text-align: center;
+  color: #343a40; /* Dark gray color */
+  font-size: 2rem; /* Larger font size */
+  font-weight: 700; /* Bold text */
+  margin-top: 2rem; /* Space above the heading */
+  margin-bottom: 1rem; /* Space below the heading */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  letter-spacing: 1px; /* Space between letters */
+}
+
+.background-image {
+  background: url('https://images.unsplash.com/photo-1579160305668-3f3b2d6e979c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNzI5MjN8MHwxfGFsbHwxfHx8fHx8fHwxNjcwMTI2MzA0&ixlib=rb-1.2.1&q=80&w=1920') no-repeat center center;
+  background-size: cover;
+  height: 100vh; /* Full height of viewport */
+}
+
